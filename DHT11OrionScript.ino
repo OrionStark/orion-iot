@@ -17,34 +17,30 @@
 #include <ESP8266WiFiType.h>
 #include <ESP8266WiFiSTA.h>
 #include <WiFiServer.h>
-
 #include <ESP8266HTTPClient.h>
-
 #include "DHT.h"
-#define DHTTYPE DHT11
 
+#define DHTTYPE DHT11
+#define BLUE_LED_PIN 12
+#define WHITE_LED_PIN 15
 #define dht_dpin 13
+
 DHT dht(dht_dpin, DHTTYPE);
 
 const char* ssid = "Robby";
 const char* password = "0l30l4ng";
-
-uint8_t BLUE_LED_PIN = 12;
-uint8_t WHITE_LED_PIN = 15;
 
 void setup() {
   Serial.begin(115200);
   pinMode(BLUE_LED_PIN, OUTPUT);
   pinMode(WHITE_LED_PIN, OUTPUT);
   WiFi.begin(ssid, password);
-
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.print("Connecting...");  
   }
   dht.begin();
   delay(500);
-  
 }
 
 void loop() {
