@@ -22,7 +22,7 @@
 #include <ESP8266HTTPClient.h>
 
 #define BLUE_LED_PIN 12
-#define RED_LED_PIN 15
+#define RED_LED_PIN 13
 #define GREEN_LED_PIN 14
 
 const char* ssid = "Robby";
@@ -39,6 +39,10 @@ void _initController();
 void setup() {
     Serial.begin(115200);
     WiFi.begin(ssid, password);
+
+    pinMode(BLUE_LED_PIN, OUTPUT);
+    pinMode(GREEN_LED_PIN, OUTPUT);
+    pinMode(RED_LED_PIN, OUTPUT);
 
     /* Starting initial led start up */
     digitalWrite(GREEN_LED_PIN, HIGH);
