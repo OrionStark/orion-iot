@@ -21,9 +21,9 @@
 #include <WiFiServer.h>
 #include <ESP8266HTTPClient.h>
 
-#define BLUE_LED_PIN 14
+#define BLUE_LED_PIN 12
 #define RED_LED_PIN 15
-#define GREEN_LED_PIN 13
+#define GREEN_LED_PIN 14
 
 const char* ssid = "Robby";
 const char* password = "0l30l4ng";
