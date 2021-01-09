@@ -25,8 +25,8 @@
 #define RED_LED_PIN 13
 #define GREEN_LED_PIN 14
 
-const char* ssid = "Robby";
-const char* password = "0l30l4ng";
+const char* ssid = "****";
+const char* password = "****";
 
 uint8_t serverStatusState = 0;
 ESP8266WebServer server(80);
@@ -40,11 +40,13 @@ void setup() {
     Serial.begin(115200);
     WiFi.begin(ssid, password);
 
+    /* Initiate pin mode */
     pinMode(BLUE_LED_PIN, OUTPUT);
     pinMode(GREEN_LED_PIN, OUTPUT);
     pinMode(RED_LED_PIN, OUTPUT);
 
     /* Starting initial led start up */
+    delay(700);
     digitalWrite(GREEN_LED_PIN, HIGH);
     delay(700);
     digitalWrite(GREEN_LED_PIN, LOW);

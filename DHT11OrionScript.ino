@@ -27,8 +27,8 @@
 
 DHT dht(dht_dpin, DHTTYPE);
 
-const char* ssid = "Robby";
-const char* password = "0l30l4ng";
+const char* ssid = "******";
+const char* password = "******";
 
 void setup() {
   Serial.begin(115200);
