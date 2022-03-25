@@ -41,6 +41,7 @@ void loop() {
    Serial.println((float)DHT11.humidity, 2);
 
    Serial.print("Temperature (C): ");
+   Serial.print("Testing");
    Serial.println((float)DHT11.temperature, 2);
 
    setInputMap(1);
